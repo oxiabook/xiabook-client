@@ -1,6 +1,6 @@
 // import request from "@/router/axios";  //引入封装的axios，也就是步骤一中的axios文件
 import axios from "axios";
-const BaseApiUrl = "http://172.31.80.91:3000/";
+const BaseApiUrl = "http://127.0.0.1:3000/";
 export default class ServerApi {
   public static async wantbook(bookName: string) {
     const res = await axios.post(`${BaseApiUrl}books/newbook/`, {
