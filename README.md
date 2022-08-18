@@ -22,3 +22,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+发布过程
+npm run build
+docker build -f Dockerfile -t xiabook/client:v1.0.1 . 

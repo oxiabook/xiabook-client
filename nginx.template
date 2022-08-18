@@ -1,0 +1,12 @@
+server {
+     listen 9000;
+     location / {
+        root /usr/share/nginx/html/xiabook-client;
+        index index.html index.htm;
+        try_files $uri $uri/ /index.html;
+     }
+     location ~* ^/(api) { #代理服务端
+        rewrite ^/api/(.*)$ /$1 break; #重定向去除/api/部分
+        proxy_pass http://$XIABOOK_SERVER_HOST:$XIABOOK_SERVER_PORT;
+     }
+}
